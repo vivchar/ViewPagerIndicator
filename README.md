@@ -46,7 +46,7 @@ A Simple View Pager Indicator with animations
 
 ## Example
 
-![Example](https://github.com/vivchar/ViewPagerIndicator/blob/master/image.png)
+![Example](https://github.com/vivchar/ViewPagerIndicator/blob/master/example.gif)
 
 ## License
 
