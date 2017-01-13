@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<declare-styleable name = "ViewPagerIndicator">
+		<attr name = "itemSize" format = "dimension"/>
+		<attr name = "delimiterSize" format = "dimension"/>
+	</declare-styleable>
+</resources>
