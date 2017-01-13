@@ -1,6 +1,6 @@
 # ViewPagerIndicator
 
-A Simple View Pager Indicator
+A Simple View Pager Indicator with animations
 
 ## Gradle
 
