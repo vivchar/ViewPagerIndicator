@@ -44,6 +44,8 @@ A Simple View Pager Indicator with animations
 		viewPagerIndicator.addOnPageChangeListener(mOnPageChangeListener);
 ```
 
+## Example
+
 ![Example](https://github.com/vivchar/ViewPagerIndicator/blob/master/image.png)
 
 ## License
