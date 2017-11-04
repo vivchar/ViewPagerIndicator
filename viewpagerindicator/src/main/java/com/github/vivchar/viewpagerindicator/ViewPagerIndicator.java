@@ -24,11 +24,13 @@ class ViewPagerIndicator
 	private static final float SCALE = 1.6f;
 	private static final int NO_SCALE = 1;
 	private static final int DEF_VALUE = 10;
+	private static final int DEF_ICON = R.drawable.white_circle;
 
 	private int mPageCount;
 	private int mSelectedIndex;
 	private int mItemSize = DEF_VALUE;
 	private int mDelimiterSize = DEF_VALUE;
+	private int mItemIcon = DEF_VALUE;
 
 	@NonNull
 	private final List<ImageView> mIndexImages = new ArrayList<>();
@@ -53,6 +55,7 @@ class ViewPagerIndicator
 		try {
 			mItemSize = attributes.getDimensionPixelSize(R.styleable.ViewPagerIndicator_itemSize, DEF_VALUE);
 			mDelimiterSize = attributes.getDimensionPixelSize(R.styleable.ViewPagerIndicator_delimiterSize, DEF_VALUE);
+			mItemIcon = attributes.getResourceId(R.styleable.ViewPagerIndicator_itemIcon, DEF_ICON);
 		} finally {
 			attributes.recycle();
 		}
@@ -145,7 +148,7 @@ class ViewPagerIndicator
 		);
 		indexParams.gravity = Gravity.CENTER;
 		index.setLayoutParams(indexParams);
-		index.setImageResource(R.drawable.white_circle);
+		index.setImageResource(mItemIcon);
 		index.setScaleType(ImageView.ScaleType.FIT_CENTER);
 		return index;
 	}
