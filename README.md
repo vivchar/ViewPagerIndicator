@@ -19,7 +19,7 @@ A Simple View Pager Indicator with animations
 
 ```gradle
 	dependencies {
-	        compile 'com.github.vivchar:ViewPagerIndicator:v1.0.1'
+	        compile 'com.github.vivchar:ViewPagerIndicator:1.0.2'
 	}
 ```
 
@@ -34,6 +34,7 @@ A Simple View Pager Indicator with animations
 		android:layout_height = "wrap_content"
 		app:delimiterSize = "8dp"
 		app:itemSize = "8dp"
+		app:itemIcon = "@drawable/your_icon"
 		/>
 ```
 
