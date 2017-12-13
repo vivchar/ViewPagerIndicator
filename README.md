@@ -1,4 +1,4 @@
-# ViewPagerIndicator [![Release](https://jitpack.io/v/vivchar/ViewPagerIndicator.svg)](https://jitpack.io/#vivchar/ViewPagerIndicator)
+# ViewPagerIndicator [![Release](https://jitpack.io/v/vivchar/ViewPagerIndicator.svg)](https://jitpack.io/#vivchar/ViewPagerIndicator) [![API](https://img.shields.io/badge/API-14%2B-yellow.svg?style=flat)](https://android-arsenal.com/api?level=14)
 
 A Simple View Pager Indicator with animations
 
