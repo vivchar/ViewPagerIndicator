@@ -21,6 +21,9 @@
 		android:layout_marginBottom = "20dp"
 		app:delimiterSize = "8dp"
 		app:itemIcon = "@drawable/ic_insert_emoticon_black_24dp"
+		app:itemScale = "1.5"
+		app:itemSelectedTint = "@color/colorAccent"
 		app:itemSize = "16dp"
+		app:itemTint = "@color/colorPrimary"
 		/>
 </FrameLayout>
