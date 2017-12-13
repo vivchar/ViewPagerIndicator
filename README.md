@@ -1,4 +1,4 @@
-# ViewPagerIndicator
+# ViewPagerIndicator [![Release](https://jitpack.io/v/vivchar/ViewPagerIndicator.svg)](https://jitpack.io/#vivchar/ViewPagerIndicator)
 
 A Simple View Pager Indicator with animations
 
