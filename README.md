@@ -28,13 +28,19 @@ A Simple View Pager Indicator with animations
 * Step 1. Add to your layout
 
 ```
+
 	<com.github.vivchar.viewpagerindicator.ViewPagerIndicator
 		android:id = "@+id/view_pager_indicator"
 		android:layout_width = "wrap_content"
 		android:layout_height = "wrap_content"
+		android:layout_gravity = "center_horizontal|bottom"
+		android:layout_marginBottom = "20dp"
 		app:delimiterSize = "8dp"
-		app:itemSize = "8dp"
-		app:itemIcon = "@drawable/your_icon"
+		app:itemIcon = "@drawable/ic_insert_emoticon_black_24dp"
+		app:itemScale = "1.5"
+		app:itemSelectedTint = "@color/colorAccent"
+		app:itemSize = "16dp"
+		app:itemTint = "@color/colorPrimary"
 		/>
 ```
 
