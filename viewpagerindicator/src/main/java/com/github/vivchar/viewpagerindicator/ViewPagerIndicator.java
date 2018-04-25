@@ -24,6 +24,7 @@ import java.util.List;
  */
 public class ViewPagerIndicator extends LinearLayoutCompat {
 
+        private static final String STATE_SUPER = "STATE_SUPER";
         private static final String STATE_INDEX = "STATE_INDEX";
         private static final float NO_SCALE = 1f;
         private static final int DEF_VALUE = 10;
@@ -180,7 +181,7 @@ public class ViewPagerIndicator extends LinearLayoutCompat {
         @Override
         protected Parcelable onSaveInstanceState() {
                 final Bundle bundle = new Bundle();
-                bundle.putParcelable("SUPER", super.onSaveInstanceState());
+                bundle.putParcelable(STATE_SUPER, super.onSaveInstanceState());
                 bundle.putInt(STATE_INDEX, mSelectedIndex);
                 return bundle;
         }
@@ -188,7 +189,7 @@ public class ViewPagerIndicator extends LinearLayoutCompat {
         @Override
         protected void onRestoreInstanceState(final Parcelable parcel) {
                 final Bundle bundle = (Bundle) parcel;
-                super.onRestoreInstanceState(bundle.getParcelable("SUPER"));
+                super.onRestoreInstanceState(bundle.getParcelable(STATE_SUPER));
                 setSelectedIndex(bundle.getInt(STATE_INDEX));
         }
 }
