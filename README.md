@@ -19,7 +19,7 @@ A Simple View Pager Indicator with animations
 
 ```gradle
 	dependencies {
-	        compile 'com.github.vivchar:ViewPagerIndicator:1.1.0'
+	        implementation 'com.github.vivchar:ViewPagerIndicator:${LATEST_VERSION}'
 	}
 ```
 
