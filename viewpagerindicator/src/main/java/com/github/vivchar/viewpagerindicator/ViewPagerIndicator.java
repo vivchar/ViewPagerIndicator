@@ -24,25 +24,25 @@ import java.util.List;
  */
 public class ViewPagerIndicator extends LinearLayoutCompat {
 
-        private static final String STATE_SUPER = "STATE_SUPER";
-        private static final String STATE_INDEX = "STATE_INDEX";
-        private static final float NO_SCALE = 1f;
-        private static final int DEF_VALUE = 10;
-        private static final int DEF_ICON = R.drawable.white_circle;
+        protected static final String STATE_SUPER = "STATE_SUPER";
+        protected static final String STATE_INDEX = "STATE_INDEX";
+        protected static final float NO_SCALE = 1f;
+        protected static final int DEF_VALUE = 10;
+        protected static final int DEF_ICON = R.drawable.white_circle;
 
-        private int mItemColor = Color.WHITE;
-        private int mItemSelectedColor = Color.WHITE;
-        private int mPageCount;
-        private int mSelectedIndex;
-        private float mItemScale = NO_SCALE;
-        private int mItemSize = DEF_VALUE;
-        private int mDelimiterSize = DEF_VALUE;
-        private int mItemIcon = DEF_VALUE;
+        protected int mItemColor = Color.WHITE;
+        protected int mItemSelectedColor = Color.WHITE;
+        protected int mPageCount;
+        protected int mSelectedIndex;
+        protected float mItemScale = NO_SCALE;
+        protected int mItemSize = DEF_VALUE;
+        protected int mDelimiterSize = DEF_VALUE;
+        protected int mItemIcon = DEF_VALUE;
 
         @NonNull
-        private final List<ImageView> mIndexImages = new ArrayList<>();
+        protected final List<ImageView> mIndexImages = new ArrayList<>();
         @Nullable
-        private ViewPager.OnPageChangeListener mListener;
+        public ViewPager.OnPageChangeListener mListener;
 
         public ViewPagerIndicator(@NonNull final Context context) {
                 this(context, null);
@@ -71,7 +71,7 @@ public class ViewPagerIndicator extends LinearLayoutCompat {
                 }
         }
 
-        private void createEditModeLayout() {
+        protected void createEditModeLayout() {
                 for (int i = 0; i < 5; ++i) {
                         final FrameLayout boxedItem = createBoxedItem(i);
                         addView(boxedItem);
@@ -94,7 +94,7 @@ public class ViewPagerIndicator extends LinearLayoutCompat {
                 mListener = listener;
         }
 
-        private void setSelectedIndex(final int selectedIndex) {
+        public void setSelectedIndex(final int selectedIndex) {
                 if (selectedIndex < 0 || selectedIndex > mPageCount - 1) {
                         return;
                 }
@@ -110,7 +110,7 @@ public class ViewPagerIndicator extends LinearLayoutCompat {
                 mSelectedIndex = selectedIndex;
         }
 
-        private void setPageCount(final int pageCount) {
+        public void setPageCount(final int pageCount) {
                 mPageCount = pageCount;
                 mSelectedIndex = 0;
                 removeAllViews();
@@ -124,7 +124,7 @@ public class ViewPagerIndicator extends LinearLayoutCompat {
         }
 
         @NonNull
-        private FrameLayout createBoxedItem(final int position) {
+        protected FrameLayout createBoxedItem(final int position) {
                 final FrameLayout box = new FrameLayout(getContext());
                 final ImageView item = createItem();
                 box.addView(item);
@@ -142,7 +142,7 @@ public class ViewPagerIndicator extends LinearLayoutCompat {
         }
 
         @NonNull
-        private ImageView createItem() {
+        protected ImageView createItem() {
                 final ImageView index = new ImageView(getContext());
                 final FrameLayout.LayoutParams indexParams = new FrameLayout.LayoutParams(mItemSize, mItemSize);
                 indexParams.gravity = Gravity.CENTER;
@@ -153,7 +153,7 @@ public class ViewPagerIndicator extends LinearLayoutCompat {
                 return index;
         }
 
-        private class OnPageChangeListener implements ViewPager.OnPageChangeListener {
+        protected class OnPageChangeListener implements ViewPager.OnPageChangeListener {
 
                 @Override
                 public void onPageScrolled(final int position, final float positionOffset, final int positionOffsetPixels) {
