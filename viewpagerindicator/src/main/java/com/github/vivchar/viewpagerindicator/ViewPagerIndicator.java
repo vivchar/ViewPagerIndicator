@@ -3,10 +3,12 @@ package com.github.vivchar.viewpagerindicator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutCompat;
 import android.util.AttributeSet;
@@ -135,7 +137,11 @@ public class ViewPagerIndicator extends LinearLayoutCompat {
                         (int) (mItemSize * mItemScale)
                 );
                 if (position > 0) {
-                        boxParams.setMargins(mDelimiterSize, 0, 0, 0);
+                        if (isRtl()) {
+                                boxParams.setMargins(0, 0, mDelimiterSize, 0);
+                        } else {
+                                boxParams.setMargins(mDelimiterSize, 0, 0, 0);
+                        }
                 }
                 box.setLayoutParams(boxParams);
                 return box;
@@ -151,6 +157,16 @@ public class ViewPagerIndicator extends LinearLayoutCompat {
                 index.setScaleType(ImageView.ScaleType.FIT_CENTER);
                 index.setColorFilter(mItemColor, android.graphics.PorterDuff.Mode.SRC_IN);
                 return index;
+        }
+
+        private boolean isRtl() {
+                final boolean result;
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                        result = getContext().getResources().getConfiguration().getLayoutDirection() == ViewCompat.LAYOUT_DIRECTION_RTL;
+                } else {
+                        result = false;
+                }
+                return result;
         }
 
         protected class OnPageChangeListener implements ViewPager.OnPageChangeListener {
